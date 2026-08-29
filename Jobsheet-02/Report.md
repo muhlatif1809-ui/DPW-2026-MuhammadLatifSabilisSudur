@@ -4,7 +4,7 @@
 | NIM | 25410702035 |
 | Nama | Muhammad Latif Sabilis Sudur |
 | Kelas | TI - 2D |
-| Repository | [Link Repository]( - ) |
+| Repository | [Link Repository]( https://github.com/muhlatif1809-ui/DPW-2026-MuhammadLatifSabilisSudur/tree/main/Jobsheet-02 ) |
 
 ## Struktur File
 ``` java
