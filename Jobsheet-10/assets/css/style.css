@@ -1,0 +1,554 @@
+/* DIUBAH: tema gelap bergaya game di semua halaman.
+   Beranda bergaya menu utama (G5). Halaman Daftar dan Tambah bergaya H1:
+   daftar berbaris seperti menu, form berbaris dengan label di kiri dan isian di kanan.
+   Bagian lain sama dengan proyek Rental. */
+
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #e5e7eb;
+    background-color: #0e0e16;
+    line-height: 1.5;
+}
+
+a {
+    color: #00e5c7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Bar Atas Bergaya Game ===== */
+.gbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+.gbar-kembali {
+    color: #8b93a7;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.gbar-kembali:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.gbar-aksi {
+    background-color: #00e5c7;
+    color: #0e0e16;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+.gbar-aksi:hover {
+    background-color: #5ff5df;
+    text-decoration: none;
+}
+
+/* Wrapper sisi kanan gbar (tombol aksi + status login berdampingan) */
+.gbar-kanan {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gbar-auth {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: #8b93a7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gbar-auth span {
+    color: #e5e7eb;
+}
+
+.gbar-auth a {
+    color: #00e5c7;
+}
+
+.gbar-auth a:hover {
+    color: #5ff5df;
+}
+
+/* ===== Main Layout ===== */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ===== Beranda: menu utama bergaya game (G5) ===== */
+.mu {
+    background-color: transparent;
+    box-shadow: none;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.mu-judul {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.mu-sub {
+    text-align: center;
+    color: #00e5c7;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.mu-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+}
+
+.mu-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mu-item {
+    color: #8b93a7;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.mu-item:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+}
+
+.mu-item.aktif {
+    background-color: #00e5c7;
+    color: #0e0e16;
+    font-weight: 700;
+}
+
+.mu-stat {
+    border: 1px solid #2a3350;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.mu-baris {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1f2540;
+}
+
+.mu-baris:last-child {
+    border-bottom: none;
+}
+
+.mu-baris span {
+    color: #8b93a7;
+    font-size: 0.85rem;
+}
+
+.mu-baris strong {
+    color: #00e5c7;
+    font-size: 1.5rem;
+}
+
+/* ===== Halaman Daftar: baris seperti menu game (H1) ===== */
+.daftar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.baris {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    color: #e5e7eb;
+}
+
+.baris:hover {
+    background-color: #00e5c7;
+    color: #0e0e16;
+}
+
+.baris-nama {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.baris:hover .baris-nama::before {
+    content: "\25B6 ";
+}
+
+.baris-detail {
+    font-size: 0.8rem;
+    color: #8b93a7;
+}
+
+.baris:hover .baris-detail {
+    color: #0e4f47;
+}
+
+.baris-aksi {
+    display: flex;
+    align-items: center;
+}
+
+.baris-aksi button {
+    padding: 0.25rem 0.6rem;
+    margin-left: 0.25rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #1f2a4a;
+    color: #9cc4ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.baris-aksi button.btn-hapus {
+    background-color: #3a1f2a;
+    color: #ff8a9c;
+}
+
+/* BARU: tombol Edit sekarang berupa <a>, disamakan tampilannya dengan button */
+.baris-aksi a.btn-edit {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    margin-left: 0.25rem;
+    border-radius: 4px;
+    background-color: #1f2a4a;
+    color: #9cc4ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.baris-aksi a.btn-edit:hover {
+    background-color: #28356a;
+    text-decoration: none;
+}
+
+.kosong {
+    color: #8b93a7;
+    padding: 0.6rem 0.9rem;
+}
+
+/* ===== Form: baris label kiri, isian kanan (H1) ===== */
+form#form-tambah p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #1f2540;
+    margin-bottom: 0;
+}
+
+form#form-tambah label {
+    flex: 0 0 38%;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #8b93a7;
+}
+
+form#form-tambah label + br {
+    display: none;
+}
+
+form#form-tambah input,
+form#form-tambah select {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 60%;
+    padding: 0.45rem 0.6rem;
+    background-color: #0b0e18;
+    border: 1px solid #2a3350;
+    border-radius: 4px;
+    color: #e5e7eb;
+    font-size: 0.9rem;
+}
+
+form#form-tambah input:focus,
+form#form-tambah select:focus {
+    outline: none;
+    border-color: #00e5c7;
+}
+
+form#form-tambah p:last-of-type {
+    display: block;
+    border-bottom: none;
+    padding-top: 1rem;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    background-color: #00e5c7;
+    color: #0e0e16;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form button[type="submit"]::before {
+    content: "\25B6 ";
+}
+
+form button[type="submit"]:hover {
+    background-color: #5ff5df;
+}
+
+/* ===== Auth: halaman Login/Register (mengikuti gaya form-tambah) ===== */
+form#form-login p,
+form#form-register p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #1f2540;
+    margin-bottom: 0;
+}
+
+form#form-login label,
+form#form-register label {
+    flex: 0 0 38%;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #8b93a7;
+}
+
+form#form-login input,
+form#form-register input {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 60%;
+    padding: 0.45rem 0.6rem;
+    background-color: #0b0e18;
+    border: 1px solid #2a3350;
+    border-radius: 4px;
+    color: #e5e7eb;
+    font-size: 0.9rem;
+}
+
+form#form-login input:focus,
+form#form-register input:focus {
+    outline: none;
+    border-color: #00e5c7;
+}
+
+form#form-login p:last-of-type,
+form#form-register p:last-of-type {
+    display: block;
+    border-bottom: none;
+    padding-top: 1rem;
+}
+
+form#form-login button[type="submit"],
+form#form-register button[type="submit"] {
+    width: 100%;
+    background-color: #00e5c7;
+    color: #0e0e16;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form#form-login button[type="submit"]::before,
+form#form-register button[type="submit"]::before {
+    content: "\25B6 ";
+}
+
+form#form-login button[type="submit"]:hover,
+form#form-register button[type="submit"]:hover {
+    background-color: #5ff5df;
+}
+
+.auth-link-bawah {
+    color: #8b93a7;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+.auth-link-bawah a {
+    color: #00e5c7;
+    font-weight: 700;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* ===== Flash Message ===== */
+.flash {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.flash-success {
+    background-color: #10382f;
+    color: #7ff0c2;
+}
+
+.flash-error {
+    background-color: #3a1f2a;
+    color: #ff9aa9;
+}
+
+/* ===== Pesan Error Validasi ===== */
+.error {
+    display: block;
+    flex: 0 0 100%;
+    text-align: right;
+    color: #ff8a9c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* ===== Kolom Pencarian ===== */
+.search-box {
+    margin-bottom: 1rem;
+}
+
+.search-box label {
+    color: #8b93a7;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.5rem 0.75rem;
+    background-color: #0b0e18;
+    border: 1px solid #2a3350;
+    border-radius: 4px;
+    color: #e5e7eb;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #00e5c7;
+}
+
+.search-box input::placeholder {
+    color: #6b7280;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Mobile */
+@media (max-width: 480px) {
+    .mu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    form#form-tambah p {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form#form-tambah label {
+        flex-basis: auto;
+        margin-bottom: 0.3rem;
+    }
+
+    form#form-tambah input,
+    form#form-tambah select {
+        max-width: 100%;
+    }
+
+    .baris {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    form#form-login p,
+    form#form-register p {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    form#form-login label,
+    form#form-register label {
+        flex-basis: auto;
+        margin-bottom: 0.3rem;
+    }
+    form#form-login input,
+    form#form-register input {
+        max-width: 100%;
+    }
+}
