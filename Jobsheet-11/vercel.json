@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.3",
+      "includeFiles": "app/**"
+    }
+  },
+  "routes": [
+    { "src": "/(app|api/includes|sql|docs)(/.*)?", "status": 404 },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
+}
